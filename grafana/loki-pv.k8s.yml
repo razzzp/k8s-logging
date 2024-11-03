@@ -1,0 +1,16 @@
+# persistent-volume.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: logging
+  name: loki-local-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: "manual"
+  hostPath:
+    path: /mnt/data/loki  # Ensure this path exists on your MicroK8s node
+

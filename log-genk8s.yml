@@ -1,0 +1,19 @@
+# kibana.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dummy-log-gen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dummy-log-gen
+  template:
+    metadata:
+      labels:
+        app: dummy-log-gen
+    spec:
+      containers:
+      - name: dummy-log-gen
+        image: localhost:5000/dummy-log-gen:latest
+
