@@ -1,0 +1,150 @@
+[
+    {
+      "timestamp": "2024-10-31T10:15:32.123Z",
+      "service_name": "auth-service",
+      "trace_id": "1f3848a0-8b4d-4e39-bfc1-a72e92b9e7f2",
+      "log_level": "INFO",
+      "message": "User authentication successful."
+    },
+    {
+      "timestamp": "2024-10-31T10:16:05.567Z",
+      "service_name": "order-service",
+      "trace_id": "a3d1a7d4-8c4d-4325-9aef-7d62192f3b61",
+      "log_level": "ERROR",
+      "message": "Failed to create order: insufficient stock."
+    },
+    {
+      "timestamp": "2024-10-31T10:17:22.890Z",
+      "service_name": "payment-service",
+      "trace_id": "a3d1a7d4-8c4d-4325-9aef-7d62192f3b61",
+      "log_level": "DEBUG",
+      "message": "Starting payment process for order ID 12345."
+    },
+    {
+      "timestamp": "2024-10-31T10:18:01.432Z",
+      "service_name": "inventory-service",
+      "trace_id": "c9f0b8d6-1b2c-4d5e-afe7-9f4d5a6c8e2b",
+      "log_level": "INFO",
+      "message": "Inventory updated for product ID 67890."
+    },
+    {
+      "timestamp": "2024-10-31T10:19:15.234Z",
+      "service_name": "shipping-service",
+      "trace_id": "d4c7e2b3-9c6d-4e6f-af8e-3d1a5f7c6e9b",
+      "log_level": "INFO",
+      "message": "Shipment created successfully for order ID 54321."
+    },
+    {
+      "timestamp": "2024-10-31T10:20:45.789Z",
+      "service_name": "notification-service",
+      "trace_id": "f9e1c3d6-2b1f-4f5b-af6e-1b7c9e8d3c2e",
+      "log_level": "ERROR",
+      "message": "Failed to send notification email to user ID 78910."
+    },
+    {
+      "timestamp": "2024-10-31T10:21:32.456Z",
+      "service_name": "auth-service",
+      "trace_id": "1f3848a0-8b4d-4e39-bfc1-a72e92b9e7f2",
+      "log_level": "DEBUG",
+      "message": "Password reset token generated for user."
+    },
+    {
+      "timestamp": "2024-10-31T10:22:15.321Z",
+      "service_name": "order-service",
+      "trace_id": "a3d1a7d4-8c4d-4325-9aef-7d62192f3b61",
+      "log_level": "INFO",
+      "message": "Order created successfully with ID 12345."
+    },
+    {
+      "timestamp": "2024-10-31T10:23:54.567Z",
+      "service_name": "payment-service",
+      "trace_id": "a3d1a7d4-8c4d-4325-9aef-7d62192f3b61",
+      "log_level": "ERROR",
+      "message": "Payment failed due to insufficient funds for order ID 12345."
+    },
+    {
+      "timestamp": "2024-10-31T10:25:12.234Z",
+      "service_name": "inventory-service",
+      "trace_id": "c9f0b8d6-1b2c-4d5e-afe7-9f4d5a6c8e2b",
+      "log_level": "WARNING",
+      "message": "Low stock warning for product ID 67890."
+    },
+    {
+      "timestamp": "2024-10-31T10:26:43.876Z",
+      "service_name": "auth-service",
+      "trace_id": "2a7c8d4f-1c3e-4b7f-af2e-6d3b9f5e7c8a",
+      "log_level": "INFO",
+      "message": "User logout successful."
+    },
+    {
+      "timestamp": "2024-10-31T10:28:00.123Z",
+      "service_name": "order-service",
+      "trace_id": "3b1d9f4e-2c5f-4e1b-b6a3-1e8f2d9a5c7d",
+      "log_level": "INFO",
+      "message": "Order status updated to 'Shipped'."
+    },
+    {
+      "timestamp": "2024-10-31T10:30:54.654Z",
+      "service_name": "shipping-service",
+      "trace_id": "3b1d9f4e-2c5f-4e1b-b6a3-1e8f2d9a5c7d",
+      "log_level": "DEBUG",
+      "message": "Shipping label generated for order ID 54321."
+    },
+    {
+      "timestamp": "2024-10-31T10:32:12.876Z",
+      "service_name": "notification-service",
+      "trace_id": "f9e1c3d6-2b1f-4f5b-af6e-1b7c9e8d3c2e",
+      "log_level": "INFO",
+      "message": "SMS notification sent to user ID 78910."
+    },
+    {
+      "timestamp": "2024-10-31T10:34:45.678Z",
+      "service_name": "inventory-service",
+      "trace_id": "4a3e2d7b-5c1f-4e5f-af6b-9e3c7a2d1f8e",
+      "log_level": "DEBUG",
+      "message": "Checked stock for product ID 12345."
+    },
+    {
+      "timestamp": "2024-10-31T10:36:12.789Z",
+      "service_name": "auth-service",
+      "trace_id": "1f3848a0-8b4d-4e39-bfc1-a72e92b9e7f2",
+      "log_level": "ERROR",
+      "message": "Failed to authenticate user: invalid credentials."
+    },
+    {
+      "timestamp": "2024-10-31T10:37:43.012Z",
+      "service_name": "payment-service",
+      "trace_id": "5d3b7c9f-2b6e-4f7a-bf1e-8d4c9f3a7e1b",
+      "log_level": "INFO",
+      "message": "Payment processed successfully for order ID 67890."
+    },
+    {
+      "timestamp": "2024-10-31T10:39:29.654Z",
+      "service_name": "order-service",
+      "trace_id": "5d3b7c9f-2b6e-4f7a-bf1e-8d4c9f3a7e1b",
+      "log_level": "INFO",
+      "message": "Order ID 67890 marked as paid."
+    },
+    {
+      "timestamp": "2024-10-31T10:41:16.789Z",
+      "service_name": "notification-service",
+      "trace_id": "3b1d9f4e-2c5f-4e1b-b6a3-1e8f2d9a5c7d",
+      "log_level": "INFO",
+      "message": "Order shipment notification sent for order ID 54321."
+    },
+    {
+      "timestamp": "2024-10-31T10:43:28.654Z",
+      "service_name": "inventory-service",
+      "trace_id": "c9f0b8d6-1b2c-4d5e-afe7-9f4d5a6c8e2b",
+      "log_level": "ERROR",
+      "message": "Failed to update inventory for product ID 67890 due to database timeout."
+    },
+    {
+      "timestamp": "2024-10-31T10:45:11.123Z",
+      "service_name": "shipping-service",
+      "trace_id": "d4c7e2b3-9c6d-4e6f-af8e-3d1a5f7c6e9b",
+      "log_level": "INFO",
+      "message": "Shipping status updated to 'In Transit' for order ID 54321."
+    }
+  ]
+  
