@@ -15,5 +15,5 @@ spec:
     spec:
       containers:
       - name: dummy-log-gen
-        image: localhost:5000/dummy-log-gen:latest
+        image: docker.io/library/dummy-log-gen:latest
 
