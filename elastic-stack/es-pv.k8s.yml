@@ -11,14 +11,5 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   storageClassName: "manual"
-  local:
+  hostPath:
     path: /mnt/data/elasticsearch  # Ensure this path exists on your MicroK8s node
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - "fried-potato"  # Replace with your node name, if needed
-

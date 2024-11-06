@@ -26,7 +26,7 @@ spec:
           value: "http://elasticsearch:9200"
         - name: ELASTICSEARCH_SERVICEACCOUNTTOKEN
           value: AAEAAWVsYXN0aWMva2liYW5hL3Rva2VuX0lUREIySklCQXpCUDh3Yk9XX1BJOlRPbFYzaUF5UmRtdXFmVmNhcjRfdnc
-        resources:
-          limits:
-            memory: "1Gi"
+        # resources:
+        #   limits:
+        #     memory: "1Gi"
 

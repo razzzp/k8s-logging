@@ -31,9 +31,9 @@ spec:
         volumeMounts:
         - name: elasticsearch-local-pvc
           mountPath: /usr/share/elasticsearch/data
-        resources:
-          limits:
-            memory: "1Gi"
+        # resources:
+          # limits:
+          #   memory: "1Gi"
   
   volumeClaimTemplates:
   - apiVersion: v1
