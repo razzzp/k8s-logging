@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kibana
+  namespace: logging
 spec:
   replicas: 1
   selector:
@@ -10,6 +11,8 @@ spec:
       app: kibana
   template:
     metadata:
+      namespace: logging
+      name: kibana
       labels:
         app: kibana
     spec:

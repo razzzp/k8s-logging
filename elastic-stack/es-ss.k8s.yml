@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: elasticsearch
+  namespace: logging
 spec:
   selector:
     matchLabels:
@@ -11,6 +12,8 @@ spec:
   replicas: 1
   template:
     metadata:
+      namespace: logging
+      name: elasticsearch
       labels:
         app: elasticsearch
     spec:
@@ -37,6 +40,7 @@ spec:
     kind: PersistentVolumeClaim
     metadata:
       name: elasticsearch-local-pvc
+      namespace: logging
     spec:
       accessModes:
         - ReadWriteOnce
