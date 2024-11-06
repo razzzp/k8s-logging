@@ -15,5 +15,6 @@ spec:
     spec:
       containers:
       - name: dummy-log-gen
-        image: docker.io/library/dummy-log-gen:latest
+        image: dummy-log-gen:latest
+        imagePullPolicy: Never
 

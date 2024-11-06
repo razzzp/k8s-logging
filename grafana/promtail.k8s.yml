@@ -1,3 +1,16 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: promtail 
+  namespace: logging
+spec:
+  ports:
+    - port: 9080
+      nodePort: 30080
+  selector:
+    name: promtail
+  type: NodePort
 --- # Daemonset.yaml
 apiVersion: apps/v1
 kind: DaemonSet
@@ -12,6 +25,7 @@ spec:
     metadata:
       labels:
         name: promtail
+      namespace: logging
     spec:
       serviceAccount: promtail-serviceaccount
       containers:
@@ -19,6 +33,9 @@ spec:
         image: grafana/promtail
         args:
         - -config.file=/etc/promtail/promtail.yaml
+        - --inspect
+        ports:
+          - containerPort: 9080
         env: 
         - name: 'HOSTNAME' # needed when using kubernetes_sd_configs
           valueFrom:
@@ -32,6 +49,8 @@ spec:
         - mountPath: /var/lib/docker/containers
           name: varlibdockercontainers
           readOnly: true
+        - mountPath: /tmp
+          name: promtail-tmp
       volumes:
       - name: logs
         hostPath:
@@ -42,6 +61,9 @@ spec:
       - name: promtail-config
         configMap:
           name: promtail-config
+      - name: promtail-tmp
+        hostPath:
+          path: /mnt/data/promtail
 --- # configmap.yaml
 apiVersion: v1
 kind: ConfigMap
@@ -55,7 +77,7 @@ data:
       grpc_listen_port: 0
 
     clients:
-    - url: https://loki:3100/loki/api/v1/push
+    - url: http://loki:3100/loki/api/v1/push
 
     positions:
       filename: /tmp/positions.yaml
@@ -66,7 +88,20 @@ data:
       kubernetes_sd_configs:
         - role: pod
       pipeline_stages:
-        - docker: {}
+      - docker: {}
+      - match:
+          selector: '{namespace="default"}'
+          stages:
+          - regex:
+              expression: "^(?s)(?P<time>\\S+?) (?P<stream>\\S+) (?P<flags>\\S+) (?P<contents>.*)$"
+          - json:
+              expressions:
+                app_name: service_name
+                log_level:
+              source: contents
+          - labels:
+              app_name:
+              log_level:
       relabel_configs:
         - source_labels:
             - __meta_kubernetes_pod_node_name

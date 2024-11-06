@@ -16,7 +16,8 @@ func main() {
 		time.Sleep(3 * time.Second)
 
 		rnd := rand.Int() % len(logs)
-
+		log := logs[rnd]
+		log["timestamp"] = time.Now().UTC().Format(time.RFC3339)
 		json.NewEncoder(os.Stdout).Encode(logs[rnd])
 	}
 }
